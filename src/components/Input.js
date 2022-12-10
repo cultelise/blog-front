@@ -1,10 +1,16 @@
-const Input = ({ label, onChange }) => {
+const Input = ({ label, onChange, value }) => {
   return (
-    <div>
+    <div className='input'>
       <label htmlFor={label}>{label}</label>
-      <input name={label} id={label} type='text' onChange={({target}) => onChange(target)}></input>
+      <input
+        name={label}
+        id={label}
+        type='text'
+        onChange={({ target }) => onChange(target)}
+        value={value}
+      ></input>
     </div>
-  )
-}
+  );
+};
 
-export default Input
+export default Input;

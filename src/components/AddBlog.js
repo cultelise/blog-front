@@ -1,16 +1,41 @@
-import Input from "./Input"
+import Input from './Input';
 
-const AddBlog = ({ onSubmit, onTitleChange, onAuthorChange, onUrlChange }) => {
-  
+const AddBlog = ({
+  onSubmit,
+  onTitleChange,
+  onAuthorChange,
+  onUrlChange,
+  titleValue,
+  authorValue,
+  urlValue,
+}) => {
   return (
     <form onSubmit={(event) => onSubmit(event)}>
       <h2>Add Blog</h2>
-      <Input label={'title'} onChange={(target) => {onTitleChange(target)}}/>
-      <Input label={'author'}  onChange={(target) => {onAuthorChange(target)}}/>
-      <Input label={'url'} onChange={(target) => {onUrlChange(target)}}/>
-      <button type='submit'>Login</button>
+      <Input
+        label={'title'}
+        value={titleValue}
+        onChange={(target) => {
+          onTitleChange(target);
+        }}
+      />
+      <Input
+        label={'author'}
+        value={authorValue}
+        onChange={(target) => {
+          onAuthorChange(target);
+        }}
+      />
+      <Input
+        label={'url'}
+        value={urlValue}
+        onChange={(target) => {
+          onUrlChange(target);
+        }}
+      />
+      <button type='submit'>Submit</button>
     </form>
-  )
-}
+  );
+};
 
-export default AddBlog
+export default AddBlog;
