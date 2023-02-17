@@ -38,4 +38,6 @@ const AddBlog = ({
   );
 };
 
+console.log();
+
 export default AddBlog;

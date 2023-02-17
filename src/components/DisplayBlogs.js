@@ -5,6 +5,8 @@ import Togglable from './Togglable';
 import AddBlog from './AddBlog';
 import Blog from './Blog';
 
+console.log();
+
 const DisplayBlogs = () => {
   const [blogs, setBlogs] = useState([]);
   const [title, setTitle] = useState('');
@@ -18,7 +20,6 @@ const DisplayBlogs = () => {
   }, []);
 
   const blogFormRef = useRef();
-  const blogDisplayRef = useRef();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -58,8 +59,14 @@ const DisplayBlogs = () => {
           />
         </Togglable>
         <h2>blog list</h2>
+
         {blogs.map((blog, index) => (
-          <Blog key={blog.id} blog={blog} ref={`blog${index}`} />
+          <div key={blog.id}>
+            <h3>{blog.title}</h3>
+            <Togglable buttonLabel='view' hide='hide'>
+              <Blog blog={blog} />
+            </Togglable>
+          </div>
         ))}
       </div>
     );

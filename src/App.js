@@ -5,6 +5,8 @@ import blogService from './services/blogs';
 import loginService from './services/login';
 import DisplayBlogs from './components/DisplayBlogs';
 
+console.log();
+
 const App = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
